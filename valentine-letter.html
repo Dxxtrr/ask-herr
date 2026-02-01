@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Valentine's Letter</title>
+    <style>
+      body {
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 20px;
+      }
+      
+      .letter-container {
+        background: #fff5f7;
+        width: 100%;
+        max-width: 700px;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        border: 2px solid #ff69b4;
+      }
+      
+      .letter-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+      .letter-header h1 {
+        color: #ff69b4;
+        font-size: 2.5em;
+        margin: 0;
+        text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.2);
+      }
+      
+      .letter-header p {
+        color: #888;
+        font-size: 1.1em;
+        margin-top: 10px;
+      }
+      
+      textarea {
+        width: 100%;
+        min-height: 400px;
+        padding: 20px;
+        font-family: 'Courier New', monospace;
+        font-size: 1.1em;
+        border: 2px solid #ffb6d9;
+        border-radius: 8px;
+        box-sizing: border-box;
+        resize: vertical;
+        line-height: 1.6;
+        color: #333;
+      }
+      
+      textarea::placeholder {
+        color: #ccc;
+      }
+      
+      .button-group {
+        display: flex;
+        gap: 10px;
+        margin-top: 20px;
+        justify-content: center;
+      }
+      
+      button {
+        padding: 12px 30px;
+        font-size: 1em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      
+      button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .save-btn {
+        background-color: #ff69b4;
+        color: white;
+      }
+      
+      .save-btn:hover {
+        background-color: #ff1493;
+      }
+      
+      .back-btn {
+        background-color: #ddd;
+        color: #333;
+      }
+      
+      .back-btn:hover {
+        background-color: #bbb;
+      }
+      
+      .heart {
+        color: #ff69b4;
+      }
+      
+      .responses {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 2px solid #ffb6d9;
+      }
+      
+      .response-box {
+        background: #fef0f5;
+        padding: 15px;
+        margin: 10px 0;
+        border-left: 4px solid #ff69b4;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+      
+      .response-box:hover {
+        background: #ffe5f0;
+        transform: translateX(5px);
+      }
+      
+      .response-label {
+        font-weight: bold;
+        color: #ff69b4;
+        display: block;
+        margin-bottom: 5px;
+      }
+      
+      .response-text {
+        color: #666;
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="letter-container">
+      <div class="letter-header">
+        <h1><span class="heart">❤️</span> Valentine's Letter <span class="heart">❤️</span></h1>
+        <p>I LOVE YOU SOOOOO MUCH! ❤️❤️❤️</p>
+      </div>
+      
+      <textarea id="letterText">Dear Lovv❤️❤️❤️,
+
+Happy Valentine’s Day ❤️
+
+Being in a long-distance relationship isn’t always easy, but loving you has never been hard. Since January 28, when we became together, you’ve become a part of my everyday life even from miles away. Every chat, every ML game we play, and every laugh we share feels like a small bridge closing the distance between us.
+
+I miss you in ways that words can’t fully explain. I miss the moments we haven’t had yet, the time we’ll spend side by side, the simple things like sitting quietly together or laughing without a screen between us. Still, even with the distance, you make me feel close, safe, and understood.
+
+What I love most about us is our honesty. We choose each other every day through communication, trust, and shared dreams. Those big dreams remind me that what we’re building is real and worth waiting for.
+
+So here is my promise to you: I promise to stay, to be patient, to communicate honestly, and to keep choosing you no matter how far apart we are. I promise to work toward the future we dream of, until distance is no longer between us but just a part of our story we overcame together.
+
+Thank you for loving me the way you do. No matter how many miles separate us, my heart is always with you—and it always will be.
+
+Always and forever,
+Dexter
+
+P.S. - Feel free to add your thoughts or reactions below! ❤️</textarea>
+      
+      <div class="button-group">
+        <button class="save-btn" onclick="saveLetter()">💾 Save Your Response</button>
+        <button class="back-btn" onclick="goBack()">← Go Back</button>
+      </div>
+      
+      <div class="responses">
+        <p style="text-align: center; color: #ff69b4; font-weight: bold; margin-bottom: 15px;">💭 How did this make you feel? Choose a response:</p>
+        
+        <div class="response-box" onclick="addResponse('I love you so much! 😭❤️')">
+          <span class="response-label">😭 Emotional:</span>
+          <span class="response-text">"I love you so much! 😭❤️"</span>
+        </div>
+        
+        <div class="response-box" onclick="addResponse('You make me so happy! I couldn\'t ask for anyone better! 💕')">
+          <span class="response-label">😊 Happy:</span>
+          <span class="response-text">"You make me so happy! I couldn't ask for anyone better! 💕"</span>
+        </div>
+        
+        <div class="response-box" onclick="addResponse('I\'m the luckiest person in the world to have you! 🥰')">
+          <span class="response-label">🥰 Lucky:</span>
+          <span class="response-text">"I'm the luckiest person in the world to have you! 🥰"</span>
+        </div>
+        
+        <div class="response-box" onclick="addResponse('Can\'t wait to spend forever with you, my love! 🌹')">
+          <span class="response-label">😍 In Love:</span>
+          <span class="response-text">"Can't wait to spend forever with you, my love! 🌹"</span>
+        </div>
+        
+        <div class="response-box" onclick="addResponse('You\'re my home, my heart, my everything! 💗')">
+          <span class="response-label">💗 Deep:</span>
+          <span class="response-text">"You're my home, my heart, my everything! 💗"</span>
+        </div>
+      </div>
+    </div>
+    
+    <script>
+      // Load saved letter from localStorage
+      window.addEventListener('DOMContentLoaded', function() {
+        const savedLetter = localStorage.getItem('valentineLetter');
+        if (savedLetter) {
+          document.getElementById('letterText').value = savedLetter;
+        }
+      });
+      
+      function addResponse(response) {
+        const textarea = document.getElementById('letterText');
+        textarea.value += '\n\n--- Her Response ---\n' + response;
+        textarea.scrollTop = textarea.scrollHeight;
+        saveLetter();
+        alert('💕 Your response has been added!');
+      }
+      
+      function saveLetter() {
+        const letterText = document.getElementById('letterText').value;
+        localStorage.setItem('valentineLetter', letterText);
+        alert('💌 Your letter has been saved!');
+      }
+      
+      function goBack() {
+        window.history.back();
+      }
+      
+      // Auto-save every 30 seconds
+      setInterval(function() {
+        const letterText = document.getElementById('letterText').value;
+        if (letterText) {
+          localStorage.setItem('valentineLetter', letterText);
+        }
+      }, 30000);
+    </script>
+    </script>
+  </body>
+</html>

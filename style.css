@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #ffb6d9 0%, #ff69b4 50%, #ff1493 100%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  margin: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  border: 3px solid #ff69b4;
+}
+
+.container h1 {
+  color: #ff1493;
+  font-size: 1.8em;
+  text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+}
+
+.container p {
+  color: #d63384;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.container .tenor-gif-embed {
+  max-width: 200px;
+}
+
+.container .btn {
+  display: flex;
+  gap: 25px;
+}
+
+.btn a {
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1.05em;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+  transition: all 0.3s ease;
+  border: 2px solid #fff;
+}
+
+.btn a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 20, 147, 0.6);
+  background: linear-gradient(135deg, #ff1493, #c71585);
+}
+
+.valentine-link {
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  padding: 12px 30px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  box-shadow: 0.5rem 1rem 3rem hsl(0, 0%, 0%, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.valentine-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0.5rem 1.5rem 3rem hsl(0, 0%, 0%, 0.4);
+}
